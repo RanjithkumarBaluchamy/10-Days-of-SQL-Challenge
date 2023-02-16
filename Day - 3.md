@@ -93,10 +93,6 @@ An OCCUPATIONS table that contains the following records:
 | Priya     | String  |
 
 
-**Solution**
-``SELECT (name || '(' || SUBSTR(occupation,1,1) || ')') FROM occupations ORDER BY name;
-SELECT ('There are a total of ' || COUNT(occupation) || ' ' || LOWER(occupation) || 's' || '.') FROM occupations GROUP BY occupation ORDER BY COUNT(occupation), occupation ASC;
-``
 ### Sample output
 Ashely(P)
 Christeen(P)
@@ -116,4 +112,10 @@ There are a total of 3 professors.
 ### Explanation
 
 The results of the first query are formatted to the problem description's specifications.
-The results of the second query are ascendingly ordered first by number of names corresponding to each profession (), and then alphabetically by profession (, and ).
+The results of the second query are ascendingly ordered first by number of names corresponding to each profession (2 < 2 < 3 < 3), and then alphabetically by profession (doctor < singer, and actor < professor). 
+
+
+**Solution**
+``SELECT (name || '(' || SUBSTR(occupation,1,1) || ')') FROM occupations ORDER BY name;
+SELECT ('There are a total of ' || COUNT(occupation) || ' ' || LOWER(occupation) || 's' || '.') FROM occupations GROUP BY occupation ORDER BY COUNT(occupation), occupation ASC;
+``
