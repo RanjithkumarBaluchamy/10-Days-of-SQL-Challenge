@@ -59,7 +59,8 @@ GROUP BY Occupation
 ORDER BY COUNT(Occupation), Occupation;
 ```
 
-### ** Pivot the Occupation column in OCCUPATIONS so that each Name is sorted alphabetically and displayed underneath its corresponding Occupation. The output column headers should be Doctor, Professor, Singer, and Actor, respectively.
+## OCCUPATIONS
+Pivot the Occupation column in OCCUPATIONS so that each Name is sorted alphabetically and displayed underneath its corresponding Occupation. The output column headers should be Doctor, Professor, Singer, and Actor, respectively.
 
 Note: Print NULL when there are no more names corresponding to an occupation.
 
@@ -116,8 +117,8 @@ FROM (
 ) AS tab2 
 GROUP BY rn;``
 
-### ** You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
-
+### Binary Tree Nodes
+You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
 
 ### Input Format
 
