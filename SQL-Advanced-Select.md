@@ -1,4 +1,4 @@
-### Type of Triangle
+## 1.Type of Triangle
 Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
 
 Equilateral: It's a triangle with  sides of equal length.
@@ -29,14 +29,14 @@ Each row in the table denotes the lengths of each of a triangle's three sides.
 
 **Solution**
 
-``SELECT CASE
+```SELECT CASE
 WHEN a < c and b < c and a + b <= c THEN 'Not A Triangle'
 WHEN a < b and c < b and a + c <= b THEN 'Not A Triangle'
 WHEN b < a and c < a and b + c <= a THEN 'Not A Triangle'
 WHEN a = b and b = c THEN 'Equilateral'
 WHEN a = b or b = c or a = c THEN 'Isosceles'
 ELSE 'Scalene' END
-FROM Triangles;``
+FROM Triangles;```
 
 ## The PADS
 
@@ -102,7 +102,7 @@ The fourth column is an alphabetically ordered list of Actor names.
 The empty cell data for columns with less than the maximum number of names per occupation (in this case, the Professor and Actor columns) are filled with NULL values.
 
 **SOLUTION**
-``SELECT 
+```SELECT 
     MAX(CASE WHEN Occupation = 'Doctor' THEN Name END) AS Doctor,
     MAX(CASE WHEN Occupation = 'Professor' THEN Name END) AS Professor,
     MAX(CASE WHEN Occupation = 'Singer' THEN Name END) AS Singer,
@@ -115,9 +115,9 @@ FROM (
   FROM Occupations 
   GROUP BY Occupation, Name
 ) AS tab2 
-GROUP BY rn;``
+GROUP BY rn;```
 
-### Binary Tree Nodes
+## Binary Tree Nodes
 You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
 
 ### Input Format
@@ -160,9 +160,7 @@ The Binary Tree below illustrates the sample:
 ![image](https://user-images.githubusercontent.com/42794483/218974480-cda608b0-8b5c-4709-b630-ae57ee8d838d.png)
 
 **SOLUTION**
-``/*
-Enter your query here.
-*/
+```
 SELECT
     N,
     CASE 
@@ -173,4 +171,4 @@ SELECT
         END
     END 
 FROM BST
-ORDER BY N ASC;``
+ORDER BY N ASC;```
