@@ -38,7 +38,7 @@ WHEN a = b or b = c or a = c THEN 'Isosceles'
 ELSE 'Scalene' END
 FROM Triangles;``
 
-## The PADS
+## 2.The PADS
 
 Generate the following two result sets:
 
@@ -59,7 +59,7 @@ GROUP BY Occupation
 ORDER BY COUNT(Occupation), Occupation;
 ```
 
-## OCCUPATIONS
+## 3.OCCUPATIONS
 Pivot the Occupation column in OCCUPATIONS so that each Name is sorted alphabetically and displayed underneath its corresponding Occupation. The output column headers should be Doctor, Professor, Singer, and Actor, respectively.
 
 Note: Print NULL when there are no more names corresponding to an occupation.
@@ -117,7 +117,7 @@ FROM (
 ) AS tab2 
 GROUP BY rn;``
 
-## Binary Tree Nodes
+## 4.Binary Tree Nodes
 You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
 
 ### Input Format
