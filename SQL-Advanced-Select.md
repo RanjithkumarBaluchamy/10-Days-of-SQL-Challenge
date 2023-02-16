@@ -28,15 +28,15 @@ Each row in the table denotes the lengths of each of a triangle's three sides.
 | 13       |14   | 30 |
 
 **Solution**
-
-```SELECT CASE
+``
+SELECT CASE
 WHEN a < c and b < c and a + b <= c THEN 'Not A Triangle'
 WHEN a < b and c < b and a + c <= b THEN 'Not A Triangle'
 WHEN b < a and c < a and b + c <= a THEN 'Not A Triangle'
 WHEN a = b and b = c THEN 'Equilateral'
 WHEN a = b or b = c or a = c THEN 'Isosceles'
 ELSE 'Scalene' END
-FROM Triangles;```
+FROM Triangles;``
 
 ## The PADS
 
@@ -102,7 +102,7 @@ The fourth column is an alphabetically ordered list of Actor names.
 The empty cell data for columns with less than the maximum number of names per occupation (in this case, the Professor and Actor columns) are filled with NULL values.
 
 **SOLUTION**
-```SELECT 
+``SELECT 
     MAX(CASE WHEN Occupation = 'Doctor' THEN Name END) AS Doctor,
     MAX(CASE WHEN Occupation = 'Professor' THEN Name END) AS Professor,
     MAX(CASE WHEN Occupation = 'Singer' THEN Name END) AS Singer,
@@ -115,7 +115,7 @@ FROM (
   FROM Occupations 
   GROUP BY Occupation, Name
 ) AS tab2 
-GROUP BY rn;```
+GROUP BY rn;``
 
 ## Binary Tree Nodes
 You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
