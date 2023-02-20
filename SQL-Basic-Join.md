@@ -46,6 +46,59 @@ FROM (
 WHERE continent IS NOT NULL
 GROUP BY continent ORDER BY continent;``
 
+## 4. Average Population of Each Continent
+
+You are given two tables: Students and Grades. Students contains three columns ID, Name and Marks.
+
+![image](https://user-images.githubusercontent.com/42794483/220068481-e85e5807-e114-4e3c-8bc2-a1ad8f8dec0e.png)
+
+Grades contains the following data:
+
+![image](https://user-images.githubusercontent.com/42794483/220068527-e11f64f3-518d-488a-bb16-a8919b4851ae.png)
+
+Ketty gives Eve a task to generate a report containing three columns: Name, Grade and Mark. Ketty doesn't want the NAMES of those students who received a grade lower than 8. The report must be in descending order by grade -- i.e. higher grades are entered first. If there is more than one student with the same grade (8-10) assigned to them, order those particular students by their name alphabetically. Finally, if the grade is lower than 8, use "NULL" as their name and list them by their grades in descending order. If there is more than one student with the same grade (1-7) assigned to them, order those particular students by their marks in ascending order.
+
+Write a query to help Eve.
+
+## Sample Input
+
+![image](https://user-images.githubusercontent.com/42794483/220068647-d31251b8-980f-45c4-a2ef-aacf93a1da96.png)
+
+## Sample Output
+
+Maria 10 99
+Jane 9 81
+Julia 9 88 
+Scarlet 8 78
+NULL 7 63
+NULL 7 68
+
+Note: Print "NULL"  as the name if the grade is less than 8.
+
+## Explanation
+Consider the following table with the grades assigned to the students:
+
+![image](https://user-images.githubusercontent.com/42794483/220068741-5aa82fd7-c771-4fa1-a207-e5b2bc5a5530.png)
+
+
+
+So, the following students got 8, 9 or 10 grades:
+Maria (grade 10)
+Jane (grade 9)
+Julia (grade 9)
+Scarlet (grade 8)
+
+```sql
+SELECT CASE 
+    WHEN Grades.Grade < 8 THEN 'NULL' 
+    ELSE Students.Name 
+    END 
+, Grades.Grade, Students.Marks 
+FROM Students, Grades 
+WHERE Students.Marks >= Grades.Min_mark AND Students.Marks <= Grades.Max_mark 
+ORDER BY Grades.Grade DESC, Students.Name;
+```
+
 ## 5. Top Competitors
 
 Julia just finished conducting a coding contest, and she needs your help assembling the leaderboard! Write a query to print the respective hacker_id and name of hackers who achieved full scores for more than one challenge. Order your output in descending order by the total number of challenges in which the hacker earned a full score. If more than one hacker received full scores in same number of challenges, then sort them by ascending hacker_id.
