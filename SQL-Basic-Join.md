@@ -191,12 +191,12 @@ Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
 ### Input Format
 
 The CITY and COUNTRY tables are described as follows:
-![image](https://user-images.githubusercontent.com/42794483/220911707-13f59514-e9f2-425e-b550-dab5c5cb76e2.png)
-![image](https://user-images.githubusercontent.com/42794483/220911759-dfcc1c25-b97d-4fe5-925e-5fa644036ac5.png)
+
+![image](https://user-images.githubusercontent.com/42794483/220911707-13f59514-e9f2-425e-b550-dab5c5cb76e2.png) ![image](https://user-images.githubusercontent.com/42794483/220911759-dfcc1c25-b97d-4fe5-925e-5fa644036ac5.png)
 
 **Solution**
-``SELECT SUM(city.population)
+```SELECT SUM(city.population)
 FROM city
 LEFT JOIN country
 ON (city.countrycode = country.code)
-WHERE continent = 'Asia';``
+WHERE continent = 'Asia';```
