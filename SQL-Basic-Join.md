@@ -173,7 +173,7 @@ ORDER BY t.cnt DESC, t.hacker_id ASC;
 
 OR
 **DB2**
-```
+``
 SELECT Submissions.hacker_id, Hackers.name from Hackers, Submissions, Challenges, Difficulty
 WHERE Submissions.score = Difficulty.score
 AND Hackers.hacker_id = Submissions.hacker_id 
@@ -181,6 +181,22 @@ AND Submissions.challenge_id = Challenges.challenge_id
 AND Challenges.difficulty_level = Difficulty.difficulty_level
 GROUP BY Submissions.hacker_id, Hackers.name
 HAVING count(*) > 1 
-ORDER BY count(*) DESC, Submissions.hacker_id ASC;```
+ORDER BY count(*) DESC, Submissions.hacker_id ASC;``
 
+##  5 Population census
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
 
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+### Input Format
+
+The CITY and COUNTRY tables are described as follows:
+![image](https://user-images.githubusercontent.com/42794483/220911707-13f59514-e9f2-425e-b550-dab5c5cb76e2.png)
+![image](https://user-images.githubusercontent.com/42794483/220911759-dfcc1c25-b97d-4fe5-925e-5fa644036ac5.png)
+
+**Solution**
+``SELECT SUM(city.population)
+FROM city
+LEFT JOIN country
+ON (city.countrycode = country.code)
+WHERE continent = 'Asia';``
