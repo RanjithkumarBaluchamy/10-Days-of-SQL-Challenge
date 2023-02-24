@@ -183,9 +183,28 @@ We define an employee's total earnings to be their monthly  worked, and the maxi
 ## Input Format
 The Employee table containing employee data for a company is described as follows:
 
-```SQ:
+``SQL
 SELECT (salary*months) AS earnings, COUNT(*) as num
 FROM employee
 GROUP BY earnings
 ORDER BY earnings DESC
-LIMIT 1;```
+LIMIT 1;``
+
+### **Weather Observation Station 2 In SQL | HackerRank Solution
+Query the following two values from the STATION table:
+
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.
+Input Format
+
+The STATION table is described as follows:
+![image](https://user-images.githubusercontent.com/42794483/221170596-5be61c08-921f-42b4-9c5d-cc588333b5b8.png)
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+## Output Format
+Your results must be in the form:
+lat lon
+
+**Solution**
+``select round(sum(lat_n), 2), round(sum(long_w), 2) 
+from station;``
