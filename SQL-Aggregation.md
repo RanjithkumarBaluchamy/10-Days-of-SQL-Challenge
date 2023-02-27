@@ -72,6 +72,18 @@ FROM CITY;
 
 Query the sum of LAT_N, followed by the sum of LONG_W, from STATION. The two results should be separated by a space and rounded to 22 decimal places.
 
+Input Format
+
+The STATION table is described as follows:
+![image](https://user-images.githubusercontent.com/42794483/221651321-8bc61486-d80b-4f79-a757-9470661c1055.png)
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+Output Format
+
+Your results must be in the form:
+
+lat lon
+
 ```sql
 SELECT ROUND(SUM(LAT_N), 2), ROUND(SUM(LONG_W), 2)
 FROM STATION
