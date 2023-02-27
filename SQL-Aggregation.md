@@ -72,18 +72,19 @@ FROM CITY;
 
 Query the sum of LAT_N, followed by the sum of LONG_W, from STATION. The two results should be separated by a space and rounded to 22 decimal places.
 
-Input Format
+## Input Format
 
 The STATION table is described as follows:
+
 ![image](https://user-images.githubusercontent.com/42794483/221651321-8bc61486-d80b-4f79-a757-9470661c1055.png)
+
 where LAT_N is the northern latitude and LONG_W is the western longitude.
 
-Output Format
-
+## Output Format
 Your results must be in the form:
-
 lat lon
 
+**Solution**
 ```sql
 SELECT ROUND(SUM(LAT_N), 2), ROUND(SUM(LONG_W), 2)
 FROM STATION
@@ -95,9 +96,15 @@ Query the sum of Northern Latitudes (LAT_N) from STATION having values greater t
 
 Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than  and less than . Truncate your answer to  decimal places.
 
-Input Format
+## Input Format
 
 The STATION table is described as follows:
+
+![image](https://user-images.githubusercontent.com/42794483/221651833-d8666d64-e874-49a2-9e2f-4313c3789c4d.png)
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+**Solution**
 
 ```sql
 SELECT ROUND(SUM(LAT_N), 4)
