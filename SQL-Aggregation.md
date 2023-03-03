@@ -115,6 +115,13 @@ WHERE LAT_N>38.7880 AND LAT_N<137.2345;
 ## 9. Weather Observation Station 14
 
 Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345137.2345. Truncate your answer to 44 decimal places.
+## Input Format
+
+The STATION table is described as follows:
+
+![image](https://user-images.githubusercontent.com/42794483/222670780-396bef85-4c5d-4a1a-a9be-48c4704bf115.png)
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
 
 ```sql
 SELECT ROUND(MAX(LAT_N), 4)
@@ -125,6 +132,14 @@ WHERE LAT_N<137.2345;
 ## 10. Weather Observation Station 15
 
 Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345137.2345. Round your answer to 44 decimal places.
+
+## Input Format
+
+The STATION table is described as follows:
+
+![image](https://user-images.githubusercontent.com/42794483/222671810-49bc31b8-2eaf-4cb9-93bf-b96332e18b23.png)
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
 
 ```sql
 SELECT ROUND(LONG_W, 4)
