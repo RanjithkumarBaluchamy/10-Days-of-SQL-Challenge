@@ -1,0 +1,46 @@
+## Draw the triangle - 1
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+### Input Format
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+```sql
+DROP PROCEDURE IF EXISTS `DoPattern`;
+DELIMITER $$
+CREATE PROCEDURE DoPattern()
+BEGIN
+    DECLARE CT INT(10) DEFAULT 20;
+    DECLARE CH VARCHAR(256) DEFAULT " *";
+    CREATE TEMPORARY TABLE `pattern` (`rowno` INT(2) UNSIGNED, `pattern_string` VARCHAR(50)) ENGINE=MEMORY;
+
+    WHILE CT > 0 DO
+        INSERT INTO `pattern` (`rowno`,`pattern_string`) VALUES (CT,REPEAT(CH,CT));
+        SET CT = CT - 1;
+    END WHILE;
+
+    SELECT `pattern_string` FROM `pattern` ORDER BY `rowno` DESC;
+    DROP TABLE `pattern`;
+END$$
+DELIMITER ;
+
+CALL DoPattern();
+```
+
+## Draw the triangle - 2
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+Write a query to print the pattern P(20).
+
+```sql
+set @number = 0;
+select repeat('* ', @number := @number + 1) 
+from information_schema.tables
+where @number < 20 ```
